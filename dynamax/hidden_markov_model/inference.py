@@ -189,7 +189,8 @@ def hmm_backward_filter(
         """Backward filtering step."""
         log_normalizer, backward_pred_probs = carry
 
-        A = get_trans_mat(transition_matrix, transition_fn, t)
+        # A = get_trans_mat(transition_matrix, transition_fn, t)
+        A = get_trans_mat(transition_matrix, transition_fn, t-1)
         ll = log_likelihoods[t]
 
         # Condition on emission at time t, being careful not to overflow.
