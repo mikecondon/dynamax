@@ -245,6 +245,7 @@ def low_rank_pinv(X, k):
     Here, we find the SVD which sorts in descending order of the singular
     values and truncate the first k.
     """
+    
     u, s, vt = jnp.linalg.svd(X)
     u_trunc = u[:,:k]
     s_trunc = s[:k]
